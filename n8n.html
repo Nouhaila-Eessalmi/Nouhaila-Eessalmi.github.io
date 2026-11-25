@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Automações n8n · Nouhaila Essalmi</title>
+<meta name="description" content="Três workflows n8n que resolvem problemas de empresa: agente de IA, integração de APIs e pipeline de dados de vendas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<nav aria-label="Navegação">
+ <div class="wrap">
+  <a class="me" href="index.html">Nouhaila Essalmi</a>
+  <a class="l" href="index.html#projetos">← Todos os projetos</a>
+  <a class="l" href="#agente">Agente de IA</a>
+  <a class="l" href="#integracao">Integração de APIs</a>
+  <a class="l" href="#vendas">Relatório de vendas</a>
+ </div>
+</nav>
+
+<header class="hero band">
+ <div class="wrap detalhe-topo">
+  <div>
+   <p class="role">Exercícios dos cursos de n8n · 2026</p>
+   <h1>Automações com n8n</h1>
+   <p class="lead">Três workflows que resolvem problemas reais de empresas: <strong>responder a clientes com IA</strong>, <strong>juntar dados de várias APIs</strong> e <strong>produzir relatórios</strong> sem trabalho manual.</p>
+   <ul class="chips chips-escuros">
+    <li>n8n</li><li>Agente de IA</li><li>REST APIs</li><li>Merge</li><li>Switch / IF</li><li>Agregação</li><li>CSV</li>
+   </ul>
+  </div>
+  <figure class="moldura">
+   <img src="n8n-3-vendas.png" alt="Workflow n8n do pipeline de dados de vendas">
+  </figure>
+ </div>
+</header>
+
+<!-- ===== Workflow 1 ===== -->
+<section class="band" id="agente">
+ <div class="wrap wf">
+  <div>
+   <p class="ctx-wf">Workflow 1</p>
+   <h2>Agente de IA que responde sobre encomendas</h2>
+   <h3>O problema</h3>
+   <p>Os clientes perguntam muitas vezes "onde está a minha encomenda?". Responder a cada um à mão leva muito tempo.</p>
+   <h3>A solução</h3>
+   <ul class="lista">
+    <li>Quando chega uma mensagem no <strong>chat</strong>, o workflow passa-a a um <strong>Agente de IA</strong>.</li>
+    <li>O agente usa um <strong>modelo de linguagem</strong> (via OpenRouter) e uma <strong>memória</strong>, para se lembrar da conversa.</li>
+    <li>Tem duas <strong>ferramentas</strong>: consultar uma <strong>tabela de dados</strong> e chamar uma <strong>API</strong> (<code>ObterDadosDoPedido</code>) para ir buscar os dados reais da encomenda.</li>
+   </ul>
+  </div>
+  <figure class="moldura">
+   <a href="n8n-1-agente.png" target="_blank" rel="noopener" title="Abrir imagem em tamanho grande"><img src="n8n-1-agente.png" alt="Workflow n8n: gatilho de chat, Agente de IA com modelo OpenRouter, memória simples, tabela de dados e pedido HTTP" loading="lazy"></a>
+   <figcaption>Clica na imagem para a ver maior. Chat → Agente de IA (modelo, memória e 2 ferramentas)</figcaption>
+  </figure>
+ </div>
+</section>
+
+<!-- ===== Workflow 2 ===== -->
+<section class="band fundo-lilas" id="integracao">
+ <div class="wrap wf">
+  <div>
+   <p class="ctx-wf">Workflow 2</p>
+   <h2>Pipeline de integração de APIs</h2>
+   <h3>O problema</h3>
+   <p>Os pedidos e os clientes estão em sistemas diferentes. A empresa quer tratar primeiro os clientes empresariais e encaminhar cada pedido para a sua região.</p>
+   <h3>A solução</h3>
+   <ul class="lista">
+    <li>Vai buscar os <strong>pedidos</strong> e os <strong>clientes</strong> a duas APIs, ao mesmo tempo. Se faltar um cliente, usa um valor de <strong>fallback</strong>.</li>
+    <li><strong>Junta</strong> os pedidos com os clientes (Merge) e envia os pedidos agregados para uma fila.</li>
+    <li>Verifica o <strong>nível de assinatura</strong>. Os pedidos entregues de clientes empresariais seguem em lotes para uma <strong>fila prioritária</strong>.</li>
+    <li>Um <strong>Switch</strong> encaminha cada pedido por <strong>região</strong> (Norte, Sul, Este, Oeste), com um caminho de reserva para os casos inesperados.</li>
+   </ul>
+  </div>
+  <figure class="moldura">
+   <a href="n8n-2-api.png" target="_blank" rel="noopener" title="Abrir imagem em tamanho grande"><img src="n8n-2-api.png" alt="Workflow n8n com duas chamadas a APIs, merge, verificação de assinatura, fila prioritária e encaminhamento por região" loading="lazy"></a>
+   <figcaption>Clica na imagem para a ver maior. 2 APIs → Merge → prioridade → encaminhamento por região</figcaption>
+  </figure>
+ </div>
+</section>
+
+<!-- ===== Workflow 3 ===== -->
+<section class="band" id="vendas">
+ <div class="wrap wf">
+  <div>
+   <p class="ctx-wf">Workflow 3</p>
+   <h2>Pipeline de dados de vendas</h2>
+   <h3>O problema</h3>
+   <p>Todas as semanas, alguém tinha de copiar as vendas, calcular os totais, separar por região e enviar um relatório. Era um trabalho repetitivo e com risco de erros.</p>
+   <h3>A solução</h3>
+   <ul class="lista">
+    <li>Obtém os dados de vendas de uma API e <strong>separa as encomendas</strong> uma a uma.</li>
+    <li><strong>Calcula o total</strong> de cada encomenda, agrega-as e envia-as para outro sistema.</li>
+    <li><strong>Filtra</strong> só as encomendas entregues e ignora as restantes.</li>
+    <li><strong>Resume por região</strong>, renomeia os campos e envia a análise.</li>
+    <li>Junta os metadados do relatório, <strong>converte para CSV</strong> e envia o ficheiro.</li>
+   </ul>
+  </div>
+  <figure class="moldura">
+   <a href="n8n-3-vendas.png" target="_blank" rel="noopener" title="Abrir imagem em tamanho grande"><img src="n8n-3-vendas.png" alt="Workflow n8n: obter vendas, dividir, calcular totais, filtrar entregues, resumir por região e converter para CSV" loading="lazy"></a>
+   <figcaption>Clica na imagem para a ver maior. API → totais → filtro → resumo por região → CSV</figcaption>
+  </figure>
+ </div>
+</section>
+
+<section class="band fundo-lilas">
+ <div class="wrap texto">
+  <h2>O que estes workflows mostram</h2>
+  <ul class="lista">
+   <li><strong>Integração de sistemas</strong> com pedidos HTTP (GET e POST) a APIs REST.</li>
+   <li><strong>Transformação de dados</strong>: dividir, juntar, agregar, renomear campos e converter para CSV.</li>
+   <li><strong>Lógica de decisão</strong> com IF e Switch, incluindo caminhos de reserva para os casos inesperados.</li>
+   <li><strong>Agentes de IA</strong> com memória e ferramentas que consultam dados reais.</li>
+   <li><strong>Documentação</strong> dentro do próprio workflow, com notas que explicam o fluxo.</li>
+  </ul>
+ </div>
+</section>
+
+<footer class="band">
+ <div class="wrap">
+  <div>
+   <h2>Gostou destes projetos?</h2>
+   <p style="max-width:34em;opacity:.9;margin:0 0 20px">Vê os outros trabalhos ou fala comigo.</p>
+   <div class="btns">
+    <a class="btn main" href="index.html#projetos">Ver todos os projetos</a>
+    <a class="btn alt" href="index.html#contacto">Contactar</a>
+   </div>
+  </div>
+ </div>
+ <div class="wrap"><small>© 2026 Nouhaila Essalmi · Porto</small></div>
+</footer>
+
+</body>
+</html>

@@ -63,11 +63,12 @@ const projetos = [
     desenho: 'sql'
   },
   {
-    titulo: 'Automações com n8n',
-    contexto: 'Formação complementar · 2026',
-    descricao: 'Criei fluxos de trabalho que ligam aplicações entre si e automatizam tarefas repetitivas.',
-    tecnologias: ['n8n', 'Workflows'],
-    desenho: 'n8n'
+    titulo: 'Automações n8n para problemas de empresa',
+    contexto: 'Exercícios dos cursos de n8n · 2026',
+    descricao: 'Três workflows: um agente de IA que responde a perguntas sobre encomendas, uma integração de APIs que junta pedidos e clientes, e um pipeline que gera relatórios de vendas por região.',
+    tecnologias: ['n8n', 'Agente de IA', 'REST APIs', 'Pipelines de dados', 'CSV'],
+    imagem: 'n8n-3-vendas.png',
+    links: [['Ver os workflows', 'n8n.html']]
   },
   {
     titulo: 'Página pessoal em HTML e CSS',

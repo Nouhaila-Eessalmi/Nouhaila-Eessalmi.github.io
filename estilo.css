@@ -134,3 +134,11 @@ code{font-size:.92em;background:var(--lilac);padding:1px 6px;border-radius:6px}
 .fundo-lilas code{background:var(--bg)}
 @media(max-width:860px){.detalhe-topo,.duas{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:640px){.galeria{grid-template-columns:minmax(0,1fr)}}
+
+/* ===== Página de workflows (n8n.html) ===== */
+.wf{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(24px,4vw,48px);align-items:start}
+.wf h2{margin-bottom:18px}
+.wf h3{font-size:17px;margin:18px 0 6px}
+.wf p{margin:0;max-width:62ch}
+.ctx-wf{font-size:14px;font-weight:600;color:var(--coral);margin:0 0 6px!important}
+@media(max-width:860px){.wf{grid-template-columns:minmax(0,1fr)}}

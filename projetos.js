@@ -31,7 +31,7 @@ const projetos = [
     descricao: 'O aluno escolhe o objetivo, o nível, os dias e os minutos por dia. Um workflow chama o agente StudyCoach, que cria um plano de estudo de inglês dia a dia.',
     tecnologias: ['OutSystems', 'Agente de IA', 'Workflow', 'Eventos', 'Reactive Web'],
     imagem: 'englishcoach-1-lista.png',
-    links: [['Ver como funciona', 'englishcoach.html']]
+   links: [['Ver como funciona', 'englishcoach.html'], ['Experimentar a app', 'https://personal-gc9fib9t-dev.outsystems.app/EnglishCoach/']]
   },
   {
     titulo: 'Migração Traditional Web → Reactive Web',

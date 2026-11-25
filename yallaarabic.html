@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YallaArabic · Nouhaila Essalmi</title>
+<meta name="description" content="YallaArabic: app OutSystems para gerir alunos, packs de horas, aulas e agenda de uma professora de árabe.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<nav aria-label="Navegação">
+ <div class="wrap">
+  <a class="me" href="index.html">Nouhaila Essalmi</a>
+  <a class="l" href="index.html#projetos">← Todos os projetos</a>
+  <a class="l" href="#funcionalidades">Funcionalidades</a>
+  <a class="l" href="#ecras">Ecrãs</a>
+ </div>
+</nav>
+
+<header class="hero band">
+ <div class="wrap detalhe-topo">
+  <div>
+   <p class="role">Projeto pessoal · OutSystems · em desenvolvimento</p>
+   <h1>YallaArabic</h1>
+   <p class="lead">Uma app para gerir o meu trabalho de professora de árabe: alunos, <strong>packs de horas</strong>, aulas e agenda. Comecei-a durante o curso, por iniciativa própria, para pôr em prática cada coisa nova que aprendia num problema real da minha vida.</p>
+   <ul class="chips chips-escuros">
+    <li>OutSystems</li><li>Reactive Web</li><li>Modelação de dados</li><li>Lógica de negócio</li><li>UI/UX</li>
+   </ul>
+   <div class="btns" style="margin-top:22px">
+    <a class="btn main" href="https://personal-gc9fib9t-dev.outsystems.app/YallaArabic/Home" target="_blank" rel="noopener">Experimentar a app →</a>
+    <a class="btn alt" href="#funcionalidades">Funcionalidades</a>
+   </div>
+  </div>
+  <figure class="moldura">
+   <img src="yalla-2-atalhos.png" alt="Página inicial do YallaArabic com atalhos para ver alunos, lessons e packs, marcar aula, criar lesson e criar pack">
+  </figure>
+ </div>
+</header>
+
+<section class="band" id="problema">
+ <div class="wrap texto">
+  <h2>O problema real</h2>
+  <p>Como professora de árabe freelance, eu tinha alunos com <strong>aulas individuais</strong> e outros com <strong>packs de horas</strong> (por exemplo, 10 horas). Controlava tudo à mão: quantas horas cada aluno já tinha usado, quantas faltavam, que aulas estavam marcadas e quais já tinham sido dadas.</p>
+  <p>Decidi construir a minha própria app em OutSystems para resolver isto. É também o meu "laboratório": sempre que aprendo um conceito novo no curso, aplico-o aqui.</p>
+ </div>
+</section>
+
+<section class="band fundo-lilas" id="funcionalidades">
+ <div class="wrap">
+  <h2>O que a app já faz</h2>
+  <ol class="passos">
+   <li>
+    <span class="quem">Alunos</span>
+    <h3>Registo de alunos</h3>
+    <p>Lista de alunos e um formulário para adicionar novos.</p>
+   </li>
+   <li>
+    <span class="quem">Packs</span>
+    <h3>Packs de horas</h3>
+    <p>Cada pack mostra as horas totais, usadas e restantes, o estado e uma barra de progresso. Também guarda o histórico de packs anteriores do aluno.</p>
+   </li>
+   <li>
+    <span class="quem">Aulas</span>
+    <h3>Individual ou pack</h3>
+    <p>As aulas são separadas por tipo. Quando a aula é de um pack, as horas são descontadas desse pack.</p>
+   </li>
+   <li>
+    <span class="quem">Agenda</span>
+    <h3>Agenda semanal</h3>
+    <p>Vista da semana com as aulas de cada dia, navegação entre semanas e um botão para marcar uma aula.</p>
+   </li>
+   <li>
+    <span class="quem">Gestão</span>
+    <h3>Pedidos e materiais</h3>
+    <p>Áreas para gerir os pedidos dos alunos e os materiais das aulas.</p>
+   </li>
+  </ol>
+ </div>
+</section>
+
+<section class="band" id="ecras">
+ <div class="wrap">
+  <h2>Ecrãs da app</h2>
+  <div class="galeria">
+   <figure class="moldura largo">
+    <img src="yalla-1-home.png" alt="Página inicial com o bloco de atalhos rápidos" loading="lazy">
+    <figcaption><strong>Página inicial.</strong> Atalhos rápidos para as tarefas mais usadas: ver a agenda do mês e adicionar um aluno.</figcaption>
+   </figure>
+   <figure class="moldura">
+    <img src="yalla-2-atalhos.png" alt="Cartões para consultar e criar alunos, lessons e packs" loading="lazy">
+    <figcaption><strong>Consultar e criar.</strong> Em cima ficam as consultas e em baixo as ações de criação.</figcaption>
+   </figure>
+   <figure class="moldura">
+    <img src="yalla-3-pack.png" alt="Dashboard de um pack com horas totais, usadas e restantes, e barra de progresso" loading="lazy">
+    <figcaption><strong>Dashboard do pack.</strong> Mostra as horas usadas e as restantes, o progresso, as aulas feitas e as aulas marcadas.</figcaption>
+   </figure>
+   <figure class="moldura">
+    <img src="yalla-4-agenda.png" alt="Agenda semanal com os dias da semana e as aulas marcadas" loading="lazy">
+    <figcaption><strong>Agenda semanal.</strong> Cada dia mostra as suas aulas, e é possível navegar entre semanas.</figcaption>
+   </figure>
+   <figure class="moldura">
+    <img src="yalla-5-aulas.png" alt="Ecrã de lessons filtrado por aluno, com aulas do pack marcadas e feitas" loading="lazy">
+    <figcaption><strong>Aulas por aluno.</strong> O ecrã separa as aulas do pack das aulas individuais, e as marcadas das já feitas.</figcaption>
+   </figure>
+  </div>
+  <p class="note">Os nomes nos ecrãs são dados de teste.</p>
+ </div>
+</section>
+
+<section class="band fundo-lilas">
+ <div class="wrap duas">
+  <div>
+   <h2>Como fui evoluindo</h2>
+   <ul class="lista">
+    <li>Comecei por um registo simples de alunos.</li>
+    <li>Em cada nível, dei a mim própria um desafio um pouco mais difícil. Juntei os packs de horas e depois separei as aulas por tipo (individual ou pack).</li>
+    <li>Juntei o cálculo de horas usadas e restantes, o histórico de packs e a agenda semanal.</li>
+    <li>Cada passo pôs em prática algo do curso: modelação de dados, Aggregates, lógica de negócio, ecrãs Reactive e navegação.</li>
+   </ul>
+  </div>
+  <div>
+   <h2>Próximos passos</h2>
+   <ul class="lista">
+    <li><strong>Versão para alunos:</strong> cada aluno poderá ver as suas aulas, consultar a agenda e marcar aulas sozinho.</li>
+    <li><strong>Inteligência artificial:</strong> um "monitor" com IA para acompanhar e ajudar os alunos.</li>
+    <li>Continuar a melhorar o design e a experiência do utilizador.</li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<footer class="band">
+ <div class="wrap">
+  <div>
+   <h2>Gostou deste projeto?</h2>
+   <p style="max-width:34em;opacity:.9;margin:0 0 20px">Vê os outros trabalhos ou fala comigo.</p>
+   <div class="btns">
+    <a class="btn main" href="index.html#projetos">Ver todos os projetos</a>
+    <a class="btn alt" href="index.html#contacto">Contactar</a>
+   </div>
+  </div>
+ </div>
+ <div class="wrap"><small>© 2026 Nouhaila Essalmi · Porto</small></div>
+</footer>
+
+</body>
+</html>

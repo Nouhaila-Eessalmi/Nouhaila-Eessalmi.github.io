@@ -34,6 +34,14 @@ const projetos = [
    links: [['Ver como funciona', 'englishcoach.html'], ['Experimentar a app', 'https://personal-gc9fib9t-dev.outsystems.app/EnglishCoach/']]
   },
   {
+    titulo: 'YallaArabic · gestão de alunos, packs e aulas',
+    contexto: 'Projeto pessoal · OutSystems · em desenvolvimento',
+    descricao: 'App que criei para resolver um problema real meu como professora de árabe: registar alunos, vender packs de horas, marcar aulas e ver a agenda da semana.',
+    tecnologias: ['OutSystems', 'Reactive Web', 'Modelação de dados', 'Agenda'],
+    imagem: 'yalla-2-atalhos.png',
+    links: [['Ver como funciona', 'yallaarabic.html'], ['Experimentar a app', 'https://personal-gc9fib9t-dev.outsystems.app/YallaArabic/Home']]
+  },
+  {
     titulo: 'Migração Traditional Web → Reactive Web',
     contexto: 'Estágio · MC Digital (Sonae) · 2026',
     descricao: 'Migrei aplicações para o modelo Reactive e adaptei ecrãs, lógica e interface. O resultado são apps mais rápidas e modernas.',
@@ -53,14 +61,6 @@ const projetos = [
     descricao: 'Escrevi queries SQL avançadas e Aggregates para tornar as consultas à base de dados mais rápidas.',
     tecnologias: ['T-SQL', 'Aggregates', 'Performance'],
     desenho: 'sql'
-  },
-  {
-    titulo: 'Yalla Arabic',
-    contexto: 'Projeto pessoal · App mobile',
-    descricao: 'App para registar alunos e organizar aulas e marcações, criada a partir da minha experiência como professora de árabe.',
-    tecnologias: ['Kotlin', 'Mobile'],
-    desenho: 'app',
-    links: [['Ver código', GITHUB + 'yalla-arabic']]
   },
   {
     titulo: 'Automações com n8n',

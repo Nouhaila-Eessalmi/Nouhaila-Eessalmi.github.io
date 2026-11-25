@@ -1,0 +1,108 @@
+/* =========================================================
+   ESTILOS DO PORTEFÓLIO
+   As cores principais estão em :root (--plum, --coral, --lilac)
+   ========================================================= */
+/* VOICE: confiante, clara, acolhedora — uma programadora júnior a apresentar-se a recrutadores
+   IDEA: o ecrã de fluxo de uma app low-code — o portefólio comporta-se como uma "Action" bem desenhada
+   PICTURE: diagrama de fluxo em SVG (Start → Aggregate → REST → If → End) num cartão de editor
+   COLOUR and TYPE: branco, ameixa profunda #2d1838 dominante, coral #ff6a4d acento, lilás #ece4f4 suporte; Space Grotesk + Inter
+   LAYOUT: banda ameixa a toda a largura com nome + diagrama; secções claras em coluna; rodapé ameixa */
+:root{color-scheme:light dark;
+--bg:light-dark(#ffffff,#140c19);--ink:light-dark(#1b1320,#f3eef6);--muted:light-dark(#5d5266,#b9adc2);
+--plum:light-dark(#2d1838,#24132e);--plum-ink:#f6f0fa;--coral:#ff6a4d;--lilac:light-dark(#ece4f4,#2a1d33);
+--line:light-dark(#e3dbe9,#3a2b44);--card:light-dark(#ffffff,#1c1222)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;line-height:1.08;text-wrap:balance;margin:0}
+h2{font-size:clamp(28px,3.4vw,40px);margin-bottom:24px}
+h3{font-size:20px}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto}
+.band{padding:clamp(36px,5vw,72px) max(5vw,16px)}
+
+/* navegação */
+nav{position:sticky;top:0;z-index:5;background:var(--plum);color:var(--plum-ink);border-bottom:1px solid #ffffff1a}
+nav .wrap{display:flex;flex-wrap:wrap;gap:6px 22px;align-items:center;padding:12px max(5vw,16px)}
+nav .me{font-family:"Space Grotesk",sans-serif;font-weight:700;margin-right:auto;text-decoration:none}
+nav a.l{text-decoration:none;opacity:.85;font-size:15px;padding:8px 0}
+nav a.l:hover,nav a.l:focus-visible{opacity:1;text-decoration:underline;text-underline-offset:4px}
+
+/* topo */
+.hero{background:var(--plum);color:var(--plum-ink)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(24px,4vw,56px);align-items:center}
+.hero h1{font-size:clamp(40px,5.6vw,64px);margin:6px 0 14px}
+.role{font-size:18px;color:#ffd2c7;font-weight:600;margin:0}
+.hero p.lead{font-size:17px;max-width:34em;opacity:.92;margin:18px 0 26px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--coral)}
+.btn.main{background:var(--coral);color:#1b0f14}
+.btn.alt{color:var(--plum-ink);border-color:#ffffff55}
+.btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:26px;font-size:14px;opacity:.85}
+.editor{background:#1a0e21;border-radius:18px;box-shadow:0 30px 60px -30px #000,0 0 0 1px #ffffff14;overflow:hidden}
+.editor .bar{display:flex;gap:7px;align-items:center;padding:12px 16px;background:#24142d;font-size:13px;color:#cbb9d6}
+.editor .bar i{width:10px;height:10px;border-radius:50%;background:#ffffff2a}
+.editor .bar span{margin-left:10px}
+.fig{position:relative;aspect-ratio:5/4}
+.fig svg{position:absolute;inset:0;width:100%;height:100%}
+.flow path.wire{stroke-dasharray:6 6;animation:run 1.4s linear infinite}
+@keyframes run{to{stroke-dashoffset:-24}}
+
+/* sobre */
+.about .wrap{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:40px}
+.about p{margin:0 0 14px;max-width:62ch}
+.langs{background:var(--lilac);border-radius:16px;padding:22px}
+.langs h3{margin-bottom:12px}
+.langs ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.langs li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.langs li span:last-child{color:var(--muted);text-align:right}
+
+/* competências */
+.skills{background:var(--lilac)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px}
+.sk{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.sk h3{font-size:17px;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.chips li{font-size:14px;padding:5px 11px;border-radius:999px;background:var(--lilac);white-space:nowrap}
+
+/* projetos */
+.proj{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:18px}
+.card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--card)}
+.card .top{height:110px;background:var(--plum);position:relative}
+.card .top svg{position:absolute;inset:0;width:100%;height:100%}
+.card .top.foto{height:180px;background:var(--lilac)}
+.card .top.foto img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.card .body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card .ctx{font-size:14px;color:var(--muted);margin:0}
+.card p{margin:0}
+.card .chips li{font-size:13px}
+.card .links{margin-top:auto;padding-top:6px;display:flex;gap:16px;flex-wrap:wrap}
+.card .links a{font-weight:600;color:var(--coral);text-underline-offset:4px;min-height:44px;display:inline-flex;align-items:center}
+.note{font-size:14px;color:var(--muted);margin-top:18px}
+
+/* percurso */
+.tl{list-style:none;padding:0;margin:0;display:grid;gap:0}
+.tl li{display:grid;grid-template-columns:11em minmax(0,1fr);gap:20px;padding:20px 0;border-top:1px solid var(--line)}
+.tl .when{color:var(--muted);font-size:15px;white-space:nowrap}
+.tl h3{font-size:18px;margin-bottom:4px}
+.tl p{margin:0;color:var(--muted)}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px}
+
+/* contacto */
+footer{background:var(--plum);color:var(--plum-ink)}
+footer .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;align-items:end}
+footer h2{color:var(--plum-ink)}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+footer li a{font-weight:600;text-underline-offset:4px;overflow-wrap:anywhere}
+footer small{display:block;margin-top:36px;opacity:.6}
+
+@media(max-width:860px){
+ .hero .wrap,.about .wrap,.cols,footer .wrap{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:600px){
+ nav a.l{font-size:14px}
+ .tl li{grid-template-columns:minmax(0,1fr);gap:4px}
+}

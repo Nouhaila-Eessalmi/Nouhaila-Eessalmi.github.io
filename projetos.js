@@ -38,7 +38,7 @@ const projetos = [
     contexto: 'Projeto pessoal · OutSystems · em desenvolvimento',
     descricao: 'App que criei para resolver um problema real meu como professora de árabe: registar alunos, vender packs de horas, marcar aulas e ver a agenda da semana.',
     tecnologias: ['OutSystems', 'Reactive Web', 'Modelação de dados', 'Agenda'],
-    imagem: 'yalla-2-atalhos.png',
+    imagem: 'yalla-1-home.png',
     links: [['Ver como funciona', 'yallaarabic.html'], ['Experimentar a app', 'https://personal-gc9fib9t-dev.outsystems.app/YallaArabic/Home']]
   },
   {

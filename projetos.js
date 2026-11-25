@@ -26,6 +26,14 @@ const GITHUB = 'https://github.com/Nouhaila-Eessalmi/';
 
 const projetos = [
   {
+    titulo: 'EnglishCoach · plano de estudo criado por um agente de IA',
+    contexto: 'Projeto final do curso de agentes · OutSystems · 2026',
+    descricao: 'O aluno escolhe o objetivo, o nível, os dias e os minutos por dia. Um workflow chama o agente StudyCoach, que cria um plano de estudo de inglês dia a dia.',
+    tecnologias: ['OutSystems', 'Agente de IA', 'Workflow', 'Eventos', 'Reactive Web'],
+    imagem: 'englishcoach-1-lista.png',
+    links: [['Ver como funciona', 'englishcoach.html']]
+  },
+  {
     titulo: 'Migração Traditional Web → Reactive Web',
     contexto: 'Estágio · MC Digital (Sonae) · 2026',
     descricao: 'Migrei aplicações para o modelo Reactive e adaptei ecrãs, lógica e interface. O resultado são apps mais rápidas e modernas.',

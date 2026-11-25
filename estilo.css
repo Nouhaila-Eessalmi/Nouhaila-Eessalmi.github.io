@@ -74,7 +74,7 @@ nav a.l:hover,nav a.l:focus-visible{opacity:1;text-decoration:underline;text-und
 .card .top{height:110px;background:var(--plum);position:relative}
 .card .top svg{position:absolute;inset:0;width:100%;height:100%}
 .card .top.foto{height:180px;background:var(--lilac)}
-.card .top.foto img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.card .top.foto img{width:100%;height:100%;object-fit:cover;object-position:left top;display:block}
 .card .body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
 .card .ctx{font-size:14px;color:var(--muted);margin:0}
 .card p{margin:0}
@@ -106,3 +106,31 @@ footer small{display:block;margin-top:36px;opacity:.6}
  nav a.l{font-size:14px}
  .tl li{grid-template-columns:minmax(0,1fr);gap:4px}
 }
+
+/* ===== Páginas de detalhe de projeto (ex.: englishcoach.html) ===== */
+.detalhe-topo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(24px,4vw,56px);align-items:center}
+.chips-escuros{margin-top:4px}
+.chips-escuros li{background:#ffffff1f;color:var(--plum-ink)}
+.moldura{margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 20px 40px -28px #000}
+.moldura img{display:block;width:100%;height:auto}
+.moldura figcaption{padding:14px 16px;font-size:15px;color:var(--muted)}
+.moldura figcaption strong{color:var(--ink)}
+.texto{max-width:1180px}
+.texto p,.texto .lista{max-width:66ch}
+.texto p{margin:0 0 14px}
+.lista{margin:0 0 14px;padding-left:1.2em;display:grid;gap:8px}
+.fundo-lilas{background:var(--lilac)}
+.passos{list-style:none;counter-reset:p;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:14px}
+.passos li{counter-increment:p;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;position:relative}
+.passos li::before{content:counter(p);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--coral);color:#1b0f14;font-weight:700;font-family:"Space Grotesk",sans-serif;margin-bottom:10px}
+.passos .quem{font-size:13px;font-weight:600;color:var(--muted)}
+.passos h3{font-size:17px;margin:4px 0 6px}
+.passos p{margin:0;font-size:15px}
+.galeria{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.galeria .largo{grid-column:1/-1}
+.duas{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px}
+.duas h2{font-size:clamp(24px,2.6vw,32px)}
+code{font-size:.92em;background:var(--lilac);padding:1px 6px;border-radius:6px}
+.fundo-lilas code{background:var(--bg)}
+@media(max-width:860px){.detalhe-topo,.duas{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:640px){.galeria{grid-template-columns:minmax(0,1fr)}}

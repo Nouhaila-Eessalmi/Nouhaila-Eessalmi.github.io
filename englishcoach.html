@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EnglishCoach · Nouhaila Essalmi</title>
+<meta name="description" content="EnglishCoach: app OutSystems em que um workflow chama um agente de IA para criar planos de estudo de inglês.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<nav aria-label="Navegação">
+ <div class="wrap">
+  <a class="me" href="index.html">Nouhaila Essalmi</a>
+  <a class="l" href="index.html#projetos">← Todos os projetos</a>
+  <a class="l" href="#como-funciona">Como funciona</a>
+  <a class="l" href="#ecras">Ecrãs</a>
+ </div>
+</nav>
+
+<header class="hero band">
+ <div class="wrap detalhe-topo">
+  <div>
+   <p class="role">Projeto final do curso de agentes · OutSystems · 2026</p>
+   <h1>EnglishCoach</h1>
+   <p class="lead">Uma app que cria planos de estudo de inglês personalizados. O aluno diz o que quer praticar e quanto tempo tem, e um <strong>agente de IA</strong>, chamado por um <strong>workflow</strong>, prepara um plano dia a dia.</p>
+   <ul class="chips chips-escuros">
+    <li>OutSystems</li><li>Agente de IA</li><li>Workflow</li><li>Eventos</li><li>Reactive Web</li><li>Modelação de dados</li>
+   </ul>
+  </div>
+  <figure class="moldura">
+   <img src="englishcoach-1-lista.png" alt="Ecrã Study Plan List com quatro planos de estudo, os seus níveis, dias, minutos por dia e estado">
+  </figure>
+ </div>
+</header>
+
+<section class="band" id="o-que-faz">
+ <div class="wrap texto">
+  <h2>O que a app faz</h2>
+  <p>Quem aprende inglês sozinho muitas vezes não sabe por onde começar nem como organizar o tempo. No EnglishCoach, o aluno cria um <strong>plano de estudo</strong> com quatro dados:</p>
+  <ul class="lista">
+   <li><strong>Objetivo</strong>, por exemplo "Practise the past simple to talk about my weekend"</li>
+   <li><strong>Nível</strong> (A2, B1…)</li>
+   <li><strong>Número de dias</strong></li>
+   <li><strong>Minutos por dia</strong></li>
+  </ul>
+  <p>A partir daí, o agente <strong>StudyCoach</strong> escreve um plano completo. Cada dia tem um tema (por exemplo "Irregular Verbs" ou "Speaking Practice"), atividades com o tempo de cada uma e um exercício prático. O plano respeita os minutos que o aluno indicou.</p>
+ </div>
+</section>
+
+<section class="band fundo-lilas" id="como-funciona">
+ <div class="wrap">
+  <h2>Como funciona</h2>
+  <ol class="passos">
+   <li>
+    <span class="quem">Aluno</span>
+    <h3>Cria o plano</h3>
+    <p>Clica em <em>Add Study Plan</em> e preenche o objetivo, o nível, os dias e os minutos por dia.</p>
+   </li>
+   <li>
+    <span class="quem">App</span>
+    <h3>Guarda e lança um evento</h3>
+    <p>O plano é guardado na base de dados com o estado <em>Generating</em>, e a app lança o evento <code>NewStudyPlan</code>.</p>
+   </li>
+   <li>
+    <span class="quem">Workflow</span>
+    <h3>Arranca o processo</h3>
+    <p>O <code>WorkflowNewStudyPlan</code> começa sozinho quando recebe o evento. Assim, o aluno não fica à espera com a página bloqueada.</p>
+   </li>
+   <li>
+    <span class="quem">Agente de IA</span>
+    <h3>Escreve o plano</h3>
+    <p>A ação <code>CallAgent_StudyCoach</code> envia os dados ao agente, que devolve o plano dia a dia. O plano fica guardado e o estado passa a <em>Active</em>.</p>
+   </li>
+   <li>
+    <span class="quem">Aluno</span>
+    <h3>Vê o resultado</h3>
+    <p>Enquanto o plano é gerado, aparece a mensagem <em>"Waiting for your study coach… click Refresh"</em>. Depois de clicar em Refresh, o plano completo aparece no ecrã.</p>
+   </li>
+  </ol>
+ </div>
+</section>
+
+<section class="band" id="ecras">
+ <div class="wrap">
+  <h2>Ecrãs da app</h2>
+  <div class="galeria">
+   <figure class="moldura">
+    <img src="englishcoach-1-lista.png" alt="Lista de planos de estudo" loading="lazy">
+    <figcaption><strong>Lista de planos.</strong> Mostra o objetivo, o nível, os dias, os minutos e o estado de cada plano, com colunas ordenáveis.</figcaption>
+   </figure>
+   <figure class="moldura">
+    <img src="englishcoach-2-a-gerar.png" alt="Detalhe de um plano com o estado Generating" loading="lazy">
+    <figcaption><strong>Plano a ser gerado.</strong> O estado <em>Generating</em> e a mensagem de espera mostram ao aluno que o agente está a trabalhar.</figcaption>
+   </figure>
+   <figure class="moldura">
+    <img src="englishcoach-3-plano.png" alt="Plano gerado pelo agente: dias 1 a 4" loading="lazy">
+    <figcaption><strong>Plano do agente (dias 1 a 4).</strong> Cada dia tem um tema, atividades com o tempo de cada uma e um exercício prático.</figcaption>
+   </figure>
+   <figure class="moldura">
+    <img src="englishcoach-4-plano-fim.png" alt="Plano gerado pelo agente: dias 5 a 7 e dica final" loading="lazy">
+    <figcaption><strong>Plano do agente (dias 5 a 7).</strong> O plano termina com revisão, um teste final e uma dica motivadora.</figcaption>
+   </figure>
+   <figure class="moldura largo">
+    <img src="englishcoach-5-workflow.png" alt="Workflow em OutSystems: Start com o evento NewStudyPlan, CallAgent_StudyCoach e End" loading="lazy">
+    <figcaption><strong>O workflow.</strong> <em>Start</em> (evento <code>NewStudyPlan</code>) → <code>CallAgent_StudyCoach</code> → <em>End</em>.</figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<section class="band fundo-lilas">
+ <div class="wrap duas">
+  <div>
+   <h2>O que este projeto mostra</h2>
+   <ul class="lista">
+    <li><strong>Integração de um agente de IA</strong> numa app OutSystems, com dados de entrada definidos e uma resposta usada na app.</li>
+    <li><strong>Processos assíncronos com eventos e workflows</strong>, que fazem tarefas demoradas sem bloquear o utilizador.</li>
+    <li><strong>Modelação de dados</strong> com estados (<em>Generating</em> → <em>Active</em>).</li>
+    <li><strong>Experiência do utilizador</strong> pensada para a espera: estado visível, mensagem clara e botão Refresh.</li>
+   </ul>
+  </div>
+  <div>
+   <h2>Próximos passos</h2>
+   <ul class="lista">
+    <li>Atualizar o ecrã sozinho quando o plano fica pronto, sem ser preciso clicar em Refresh.</li>
+    <li>Marcar cada dia do plano como concluído e ver o progresso.</li>
+    <li>Tratar erros do agente, mostrando uma mensagem e dando a opção de tentar de novo.</li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<footer class="band">
+ <div class="wrap">
+  <div>
+   <h2>Gostou deste projeto?</h2>
+   <p style="max-width:34em;opacity:.9;margin:0 0 20px">Vê os outros trabalhos ou fala comigo.</p>
+   <div class="btns">
+    <a class="btn main" href="index.html#projetos">Ver todos os projetos</a>
+    <a class="btn alt" href="index.html#contacto">Contactar</a>
+   </div>
+  </div>
+ </div>
+ <div class="wrap"><small>© 2026 Nouhaila Essalmi · Porto</small></div>
+</footer>
+
+</body>
+</html>
